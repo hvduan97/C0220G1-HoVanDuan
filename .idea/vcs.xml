@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module1/nhapMonLapTrinhCanBan/BaiTap/SuDungGit/GitProject" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module1/nhapMonLapTrinhCanBan/BaiTap/SuDungGit/GitProject/GitProject" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module1/nhapMonLapTrinhCanBan/ThucHanh/CloneDuAnTuGit/wf-hello" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module1/nhapMonLapTrinhCanBan/ThucHanh/HienThiKetQua" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module1/nhapMonLapTrinhCanBan/ThucHanh/NhungJavascript" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module1/nhapMonLapTrinhCanBan/ThucHanh/TaoDuAnMoiTrenGitHub" vcs="Git" />
+  </component>
+</project>
