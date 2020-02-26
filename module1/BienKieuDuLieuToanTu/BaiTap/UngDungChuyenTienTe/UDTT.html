@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<body>
+<label for="">Amount</label><input type="number" id="amount">
+<label for="">FromCurrent</label><select name="" id="fromCurrent">
+    <option value="VN">VN</option>
+    <option value="USD">USD</option>
+</select><label for="">ToCurrent</label><select name="" id="toCurrent">
+    <option value="VN">VN</option>
+    <option value="USD">USD</option>
+</select>
+<button onclick="chuyenTien()">Convert</button>
+<input type="number" id="result">
+<script>
+    function chuyenTien() {
+        let amount=document.getElementById("amount");
+        let fromCurrent=document.getElementById("fromCurrent");
+        let toCurrent=document.getElementById("toCurrent");
+        let result=0;
+        if (fromCurrent.value==="VN" && toCurrent.value==="USD")
+        {
+            result=amount.value*23000;
+        }
+        else if (fromCurrent.value==="USD" && toCurrent.value==="VN")
+        {
+            result=amount.value/23000;
+        }
+        else
+        {
+            result=amount.value;
+        }
+        document.getElementById("result").value=result;
+    }
+</script>
+</body>
+</html>
