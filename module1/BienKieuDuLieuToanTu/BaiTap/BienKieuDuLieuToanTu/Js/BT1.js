@@ -1,0 +1,11 @@
+let markPhysical=prompt("nhập điểm lý");
+let markBiology=prompt("nhập điểm sinh");
+let markChemistry=prompt("nhập điểm hóa");
+let markBio=parseInt(markBiology);
+let markPhy=parseInt(markPhysical);
+let markChe=parseInt(markChemistry);
+let averageMark=(markBio+markChe+markPhy)/3;
+let sumMark=markPhy+markChe+markBio;
+document.write("Mark Average = " + averageMark);
+document.write("<br/>");
+document.write("Mark Sum = " + sumMark);
