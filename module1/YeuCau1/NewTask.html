@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let result=0;
+    let name=prompt("Enter Full Name");
+    let idCard=prompt("Enter ID Card");
+    let birthDay=prompt("Enter BirthDay");
+    let email=prompt("Enter Email");
+    let address=prompt("Enter Address");
+    let typeCustomer=prompt("Enter Type Customer: Diamond, Platinum, Gold, Silver, Member");
+    let discout=prompt("Enter Discout");
+    let numberCustomer=prompt("Enter Number Customer");
+    let rentdays=prompt("Enter Rentdays");
+    let service=prompt("Enter Service: Villa, House, Room");
+    let typeRoom=prompt("Enter Type Room: Vip, Business, Normal");
+    if (service==="Villa"){
+        result=(500*rentdays*(1-discout/100));
+    }
+    else if(service==="House"){
+        result=(300*rentdays*(1-discout/100));
+    }
+    else {
+        result=(100*rentdays*(1-discout/100));
+    }
+    alert(name + '\n' + idCard + '\n' + birthDay +'\n'+ email +'\n'+ address +'\n'+ typeCustomer +'\n'+ discout +'\n'+ numberCustomer +'\n'+ rentdays +'\n'+ service +'\n'+ typeRoom +'\n'+ "Số tiền phải trả là: "+ result);
+
+</script>
+</body>
+</html>
