@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+<h1>Calculator</h1>
+<input type="number" id="box1"><input type="number" id="box2"><br><br>
+<button onclick="phepCong()">Addition(+)</button>
+<button onclick="phepTru()">Subtraction(-)</button>
+<button onclick="phepNhan()">Multiplication(*)</button>
+<button onclick="phepChia()">Division(/)</button><br><br>
+<label for="">Kết quả: </label><input type="number" id="ketqua">
+<script>
+    let box1=document.getElementById("box1");
+    let box2=document.getElementById("box2");
+    function phepCong() {
+        document.getElementById("ketqua").value = parseInt(box1.value) + parseInt(box2.value);
+    }
+    function phepTru() {
+        document.getElementById("ketqua").value=parseInt(box1.value) - parseInt(box2.value);
+    }
+    function phepNhan() {
+        document.getElementById("ketqua").value = parseInt(box1.value) * parseInt(box2.value);
+    }
+    function phepChia() {
+        document.getElementById("ketqua").value = parseInt(box1.value)/parseInt(box2.value);
+    }
+</script>
+</body>
+</html>
