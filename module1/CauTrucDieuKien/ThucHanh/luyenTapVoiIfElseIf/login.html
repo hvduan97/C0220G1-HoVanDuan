@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<script>
+    let enterUser=prompt("Enter Your User");
+    if (enterUser==="Admin"){
+        let enterPassword=prompt("Enter Your Password");
+        if (enterPassword==="TheMaster"){
+            alert("Welcome");
+        }
+        else if (enterPassword===null){
+            alert("Canceled");
+        }
+        else {
+            alert("Wrong password");
+        }
+    }
+    else if (enterUser===""){
+        alert("canceld");
+    }
+    else {
+        alert("I don’t know you");
+    }
+</script>
+</body>
+</html>
