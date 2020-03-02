@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="enterNumber">Nhập vào một số bất kì</label><br>
+<input type="text" id="enterNumber"><button onclick="sum()">Tính tổng</button><br>
+<p id="result"></p>
+<script>
+    function sum() {
+        let enterNumber=parseInt(document.getElementById('enterNumber').value);
+        let i;
+        let sum=0;
+        if (enterNumber>0){
+            for (i=1;i<=enterNumber;i++){
+                sum+=i;
+            }
+            document.getElementById('result').innerHTML='Kết quả là: ' + sum;
+        }
+        else {
+            alert('Bạn nhập lại giùm mình');
+        }
+    }
+</script>
+</body>
+</html>
