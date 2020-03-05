@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sinh Bản Cửu Chương</title>
+</head>
+<body>
+<script>
+    let sout;
+    sout = "<table border='1' cellspacing='2' cellpadding='1' width='1000' height='300'>"
+    for (j = 1; j <= 9; j++) {
+        sout = sout + "<tr>";
+        for (i = 2; i <= 9; i++) {
+            sout = sout + "<td>" +i+' x '+j+' = '+ i * j + "</td>";
+        }
+        sout = sout + "</tr>";
+    }
+    sout = sout + "</table>";
+    document.write(sout);
+    // for (k=1;k<=9;k++){
+    //     for (g=2;g<=9;g++){
+    //         document.write(g+'x'+k+'='+k*g);
+    //     }
+    // }
+</script>
+</body>
+</html>

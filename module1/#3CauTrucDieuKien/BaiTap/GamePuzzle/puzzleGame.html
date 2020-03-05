@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>puzzle</title>
+    <style>
+        .img {
+            border: outset;
+            border-color: white
+        }
+    </style>
 </head>
 <body>
 <div style="margin:auto;max-width:940px;" >
-    <img  id="image1" src="image/a1.jpg" onclick="change('image1')"/>
-    <img id="image2" src="image/b2.jpg" onclick="change('image2')"/>
-    <img id="image3" src="image/a3.jpg" onclick="change('image3')"/>
-    <img id="image4" src="image/a4.jpg" onclick="change('image4')"/>
-    <img id="image5" src="image/a5.jpg" onclick="change('image5')"/>
+    <img id="image1" src="image/a1.jpg" onclick="change('image1')" class="img"/>
+    <img id="image2" src="image/b2.jpg" onclick="change('image2')" class="img"/>
+    <img id="image3" src="image/a3.jpg" onclick="change('image3')" class="img"/>
+    <img id="image4" src="image/a4.jpg" onclick="change('image4')" class="img"/>
+    <img id="image5" src="image/a5.jpg" onclick="change('image5')" class="img"/>
 </div>
 <script>
     function change(changeImage) {
@@ -52,7 +58,7 @@
             }
             else {
                 image3.src ="image/a3.jpg";
-                i3='b3';
+                i3='a3';
             }
         }
         if (changeImage=='image4'){
@@ -75,9 +81,16 @@
                 i5='a5';
             }
         }
-
         if (i1.substr(0,1)==i2.substr(0,1) && i2.substr(0,1)==i3.substr(0,1) && i3.substr(0,1)==i4.substr(0,1) && i4.substr(0,1)==i5.substr(0,1)){
-            alert("done")
+
+            // setTimeout(function(){ alert("done"); }, 100);
+            for(let i=1;i<=5;i++) {
+                document.getElementById('image'+i).style.borderColor = 'red';
+            }
+        } else {
+            for (let i=1;i<=5;i++){
+                document.getElementById('image'+i).style.borderColor = 'white';
+            }
         }
 
     }

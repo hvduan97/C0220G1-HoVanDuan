@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .button{
+            width: 45px;
+            height: 45px;
+        }
+    </style>
+</head>
+<body>
+<table border="0">
+    <tr>
+        <input type="text" id="nhap" style="width: 192px;height: 45px"><br>
+    </tr>
+    <tr>
+        <th><button type="button" class="button" value="1" onclick="cal(this.value)">1</button></th>
+        <th><button type="button" class="button" value="2" onclick="cal(this.value)">2</button></th>
+        <th><button type="button" class="button" value="3" onclick="cal(this.value)">3</button></th>
+        <th><button type="button" class="button" value="+" onclick="cal(this.value)">+</button></th>
+    </tr>
+    <tr>
+        <th><button type="button" class="button" value="4" onclick="cal(this.value)">4</button></th>
+        <th><button type="button" class="button" value="5" onclick="cal(this.value)">5</button></th>
+        <th><button type="button" class="button" value="6" onclick="cal(this.value)">6</button></th>
+        <th><button type="button" class="button" value="-" onclick="cal(this.value)">-</button></th>
+    </tr>
+    <tr>
+        <th><button type="button" class="button" value="7" onclick="cal(this.value)">7</button></th>
+        <th><button type="button" class="button" value="8" onclick="cal(this.value)">8</button></th>
+        <th><button type="button" class="button" value="9" onclick="cal(this.value)">9</button></th>
+        <th><button type="button" class="button" value="*" onclick="cal(this.value)">x</button></th>
+    </tr>
+    <tr>
+        <th><button type="button" class="button" value="C" onclick="cal(this.value)">C</button></th>
+        <th><button type="button" class="button" value="0" onclick="cal(this.value)">0</button></th>
+        <th><button type="button" class="button" value="=" onclick="cal(this.value)">=</button></th>
+        <th><button type="button" class="button" value="/" onclick="cal(this.value)">/</button></th>
+    </tr>
+</table>
+<script>
+    function cal(tinh) {
+        let inputValue=document.getElementById('nhap');
+        inputValue.value=(tinh=='=')?eval(inputValue.value):(tinh=='C')?'':(inputValue.value+tinh);
+    }
+</script>
+</body>
+</html>

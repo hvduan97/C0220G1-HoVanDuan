@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let FVN=0;/*Giá trị của tương lai ở tháng thứ n*/
+    let PV=parseInt(prompt('Nhập vốn ban đầu của bạn'));/*Giá trị vốn ban đầu*/
+    let i=parseFloat(prompt('Nhập lãi suất'));/*Lãi suất*/
+    let n=parseInt(prompt('Nhập số tháng cho vay:'));
+    let j;
+    FVN=PV;
+    for (j=1;j<=n;j++){
+        FVN*=(1+i);
+    }
+    alert('Lãi là: '+ FVN);
+
+</script>
+</body>
+</html>

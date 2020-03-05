@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a=1;
+    let b=1;
+    let sum=0;
+    for (i=1;i<=20;i++){
+        let c=a+b;
+        a=b;
+        b=c;
+        document.write(c+'<br/>');
+        sum+=c;
+    }
+    document.write("Tổng là: "+sum);
+</script>
+</body>
+</html>

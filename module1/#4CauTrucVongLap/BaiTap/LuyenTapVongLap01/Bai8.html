@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<Label>Hãy Thử Đoán Xem</Label><br>
+<button onclick="guess()">Chơi</button>
+<script>
+    function guess() {
+        let fromNumber=parseInt(prompt('Nhập số bắt đầu của đoạn'));
+        let toNumber=parseInt(prompt('Nhập số kết thúc của đoạn'));
+        while (fromNumber>toNumber){
+            fromNumber=parseInt(prompt('Số bắt đầu phải nhỏ hơn số kết thúc. Hãy nhập lại số bắt đầu của đoạn'));
+            toNumber=parseInt(prompt('Hãy nhập lại số kết thúc của đoạn'));
+        }
+        let chooseNumber=Math.floor(Math.random() * toNumber) + fromNumber;
+        let guessNumber=parseInt(prompt('nhập số mà bạn đoán trong khoản trên:'));
+        while (/*guessNumber!==chooseNumber*/1){
+            /*alert('Bạn đoán sai');
+            guessNumber=parseInt(prompt('nhập số mà bạn đoán'));*/
+            /*if (guessNumber<fromNumber && guessNumber>toNumber){
+                alert('abc');
+                guessNumber=parseInt(prompt('Số bạn nhập nằm ngoài khoảng muốn đoán rồi'));
+            }*/
+            if (guessNumber>chooseNumber){
+                alert('Bạn nhập số lớn hơn rồi');
+                guessNumber=parseInt(prompt('nhập số mà bạn đoán'));
+            }
+            else if (guessNumber<chooseNumber){
+                alert('Bạn nhập số bé hơn rồi');
+                guessNumber=parseInt(prompt('nhập số mà bạn đoán'));
+            }
+            /*else if (guessNumber>)*/
+            else {
+                alert('Bạn đoán đúng rồi');
+                break;
+            }
+        }
+        /*alert('bạn đoán đúng');*/
+    }
+</script>
+</body>
+</html>

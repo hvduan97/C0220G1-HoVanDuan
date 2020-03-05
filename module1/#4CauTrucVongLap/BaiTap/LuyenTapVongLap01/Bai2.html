@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let enterTem=parseInt(prompt('Nhập nhiệt độ:'));
+    while (1){
+        if (enterTem<20){
+            alert('Nhiệt độ quá thấp. Nhập lại:');
+            enterTem=parseInt(prompt('Hãy nhập lại nhiệt độ:'));
+        }
+        else if (enterTem>100){
+            alert('Nhiệt độ quá cao. Nhập lại:');
+            enterTem=parseInt(prompt('Hãy nhập lại nhiệt độ:'));
+        }
+        else {
+            alert('Nhiệt độ ổn ^^');
+            break;
+        }
+    }
+</script>
+</body>
+</html>
