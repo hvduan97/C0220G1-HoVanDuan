@@ -6,6 +6,7 @@
 </head>
 <body>
 <script>
+    let chooseProperties;
     let result=0;
     let name=prompt("Enter Full Name");
     let idCard=prompt("Enter ID Card");
@@ -57,7 +58,18 @@
                 email +'\n'+ address +'\n'+ typeCustomer +'\n'+ discout +'\n'+
                 numberCustomer +'\n'+ rentdays +'\n'+ service +'\n'+ typeRoom +'\n'
                 /!*+ "Số tiền phải trả là: "+ result*!/);*/
-            let chooseProperties=parseInt(prompt('Chọn thuộc tính bạn muốn chỉnh sửa'));
+            chooseProperties=parseInt(prompt('Chọn thuộc tính bạn muốn chỉnh sửa'+'\n'+
+            '1. name'+'\n'+
+            '2. idCard'+'\n'+
+            '3. birthDay'+'\n'+
+            '4. email'+'\n'+
+            '5. address'+'\n'+
+            '6. typeCustomer'+'\n'+
+            '7. discout'+'\n'+
+            '8. numberCustomer'+'\n'+
+            '9. rentdays'+'\n'+
+            '10. service'+'\n'+
+            '11. typeRoom'+'\n'));
             switch (chooseProperties) {
                 case 1:{
                     name=prompt("Enter Full Name");
@@ -71,7 +83,46 @@
                     birthDay=prompt("Enter BirthDay");
                 }
                 break;
+                case 4:{
+                    email=prompt("Enter Email");
+                }
+                break;
+                case 5:{
+                    address=prompt("Enter Address");
+                }
+                break;
+                case 6:{
+                    typeCustomer=prompt("Enter Type Customer: Diamond, Platinum, Gold, Silver, Member");
+                }
+                break;
+                case 7:{
+                    discout=prompt("Enter Discout");
+                }
+                break;
+                case 8:{
+                    numberCustomer=prompt("Enter Number Customer");
+                }
+                break;
+                case 9:{
+                    rentdays=prompt("Enter Rentdays");
+                }
+                break;
+                case 10:{
+                    service=prompt("Enter Service: Villa, House, Room");
+                }
+                break;
+                case 11:{
+                    typeRoom=prompt("Enter Type Room: Vip, Business, Normal");
+                }
+                break;
+                default:{
+                    alert('Failed');
+                }
             }
+            alert(name + '\n' + idCard + '\n' + birthDay +'\n'+
+                email +'\n'+ address +'\n'+ typeCustomer +'\n'+ discout +'\n'+
+                numberCustomer +'\n'+ rentdays +'\n'+ service +'\n'+ typeRoom +'\n'
+                /*+ "Số tiền phải trả là: "+ result*/);
             }
         }
 </script>
