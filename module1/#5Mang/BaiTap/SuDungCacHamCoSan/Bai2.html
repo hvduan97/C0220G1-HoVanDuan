@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*let arang=new Array(5);
+    let k=0;
+    let vitrichenxoa=parseInt(prompt('nhập vị trí cần chèn xóa'));
+    // let giatricanchen=parseInt(prompt('nhap giá trị cần chèn'));
+    while (k<5){
+        arang[k]=parseInt(prompt('arang['+k+']'));
+        k++;
+    }
+    document.write('Trước khi chèn: arang['+arang+']'+'<br/>');
+    // Chèn một phần tử trong mảng
+    /!*for (let i=arang.length+1;i>=vitrichen;i--){
+        arang[i]=arang[i-1];
+    }
+    arang[vitrichen]=giatricanchen;
+
+    document.write('Sau khi chèn: arang['+arang+']');*!/
+    for (let i=vitrichenxoa;i<arang.length;i++){
+        arang[i]=arang[i+1];
+    }
+    arang.pop();
+    document.write('Sau khi xóa: arang['+arang+']');*/
+    let num=prompt('nhập số cần chèn');
+    let stringChuoi=num.toString();
+    let result=[stringChuoi[0]];
+    for (let i=1;i<stringChuoi.length;i++){
+        if ((stringChuoi[i-1])%2==0 && stringChuoi[i]%2===0 ){
+            result.push('-',stringChuoi[i-1]);
+        }
+        else {
+            result.push(stringChuoi[i]);
+        }
+    }
+    console.log(result.join(''));
+
+</script>
+</body>
+</html>
