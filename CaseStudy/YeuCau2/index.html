@@ -124,6 +124,67 @@
                 numberCustomer +'\n'+ rentdays +'\n'+ service +'\n'+ typeRoom +'\n'
                 /*+ "Số tiền phải trả là: "+ result*/);
             }
+            case 3:{
+                let dn='Đà Nẵng';
+                let h='Huế';
+                let qn='Quảng Nam';
+                let giamgiatheodiachi=0;
+                switch (address) {
+                    case dn: giamgiatheodiachi=20;
+                        break;
+                    case h: giamgiatheodiachi=10;
+                        break;
+                    case qn: giamgiatheodiachi=5;
+                        break;
+                    default: giamgiatheodiachi;
+                }
+                let songay=parseInt(rentdays);
+                let giamgiatheothoigian=0;
+                if (songay>7){
+                    giamgiatheothoigian=30;
+                }
+                else if (songay>4){
+                    giamgiatheothoigian=20;
+                }
+                else if (songay>=2){
+                    giamgiatheothoigian=10;
+                }
+                else {
+                    giamgiatheothoigian=0;
+                }
+                let giamgiatheoloaikhachang=0;
+                let d='Diamond';
+                let g='Gold';
+                let s='Silver';
+                let p='Platium';
+                let m='Member';
+                switch (typeCustomer) {
+                    case d: giamgiatheoloaikhachang=15;
+                        break;
+                    case p: giamgiatheoloaikhachang=10;
+                        break;
+                    case g: giamgiatheoloaikhachang=5;
+                        break;
+                    case s: giamgiatheoloaikhachang=2;
+                        break;
+                    case m: giamgiatheoloaikhachang=0;
+                }
+                let sotiengiamgia=giamgiatheoloaikhachang+giamgiatheothoigian+giamgiatheodiachi;
+                /* alert('so tien giam gia la'+sotiengiamgia);*/
+                let v='Villa';
+                let ho='House';
+                let ro='Room';
+                let gialoaidichvu=0;
+                switch (service) {
+                    case v: gialoaidichvu=500;
+                        break;
+                    case ho: gialoaidichvu=300;
+                        break;
+                    case ro: gialoaidichvu=100;
+                }
+                let sotienphaitra=gialoaidichvu*songay-sotiengiamgia;
+                alert('Số tiền phải trả là '+sotienphaitra);
+            }
         }
 </script>
 </body>
