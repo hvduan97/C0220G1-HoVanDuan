@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let  check=false;
+    let name=prompt("Enter Full Name");
+    do {
+        let idCard=prompt("Enter ID Card");
+        if (!isNaN(idCard)){
+            idCard=Number.parseFloat(idCard);
+        }
+        if (!Number.isInteger(idCard)){
+            alert('CMND k đúng định dạng');
+            continue;
+        }
+        if (idCard<100000000 || idCard>999999999){
+            alert('CMND không đúng định dạng');
+            continue;
+        }
+        check=true;
+    }while (!check);
+    check=false;
+    let birthDay=prompt("Enter BirthDay");
+    let email=prompt("Enter Email");
+       while (1){
+           let countAco=0;
+           let countDot=0;
+           for (let i=0;i<email.length;i++){
+               if (email.charAt(i)==='@'){
+                   countAco++;
+                   for (let j=i;j<email.length;j++){
+                       if (email.charAt(j)==='.'){
+                           countDot++;
+                       }
+                   }
+               }
+           }
+           if (countAco!==1 || countDot!==1){
+               email=prompt('Enter Email Again');
+           }
+           else {
+               break;
+           }
+       }
+    let address=prompt("Enter Address");
+    let typeCustomer=prompt("Enter Type Customer: Diamond, Platinum, Gold, Silver, Member");
+    let discout=prompt("Enter Discout");
+    let numberCustomer=prompt("Enter Number Customer");
+    let rentdays=prompt("Enter Rentdays");
+    let service=prompt("Enter Service: Villa, House, Room");
+    let typeRoom=prompt("Enter Type Room: Vip, Business, Normal");
+</script>
+</body>
+</html>

@@ -2,97 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>puzzle</title>
-    <style>
-        .img {
-            border: outset;
-            border-color: white
-        }
-    </style>
+    <title>Chuyen doi giua feet va met</title>
 </head>
 <body>
-<div style="margin:auto;max-width:940px;" >
-    <img id="image1" src="image/a1.jpg" onclick="change('image1')" class="img"/>
-    <img id="image2" src="image/b2.jpg" onclick="change('image2')" class="img"/>
-    <img id="image3" src="image/a3.jpg" onclick="change('image3')" class="img"/>
-    <img id="image4" src="image/a4.jpg" onclick="change('image4')" class="img"/>
-    <img id="image5" src="image/a5.jpg" onclick="change('image5')" class="img"/>
-</div>
+<h1>Feet <--> Met</h1><br>
+<input type="text" id="input">&#160;<select id="donVi">
+    <option value="met">Met</option>
+    <option value="feet">Feet</option>
+</select>&#160;<button onclick="show()">Convert</button>
+<br>
+<hr width="315px" style="position: absolute;left: 0">
+<br>
+<p id="result"></p>
 <script>
-    function change(changeImage) {
-        image1=document.getElementById("image1");
-        image2=document.getElementById("image2");
-        image3=document.getElementById("image3");
-        image4=document.getElementById("image4");
-        image5=document.getElementById("image5");
-        let i1=image1.src.substr(image1.src.lastIndexOf('.jpg')-2,2);
-        let i2=image2.src.substr(image2.src.lastIndexOf('.jpg')-2,2);
-        let i3=image3.src.substr(image3.src.lastIndexOf('.jpg')-2,2);
-        let i4=image4.src.substr(image4.src.lastIndexOf('.jpg')-2,2);
-        let i5=image5.src.substr(image5.src.lastIndexOf('.jpg')-2,2);
-        if (changeImage=='image1'){
+    function show(){
+        let val = document.getElementById("input");
+        let donVi = document.getElementById("donVi");
 
-            if (i1=='a1') {
-                image1.src ="image/b1.jpg";
-                i1='b1';
-            }
-            else {
-                image1.src ="image/a1.jpg";
-                i1='a1';
-            }
+        let result = convert(val.value,donVi.value);
+        if (donVi.value=="met"){
+            document.getElementById("result").innerHTML = result+" feet";
+        }else if (donVi.value=="feet"){
+            document.getElementById("result").innerHTML = result+" met";
         }
-        if (changeImage=='image2'){
-            if (i2=='a2') {
-                image2.src ="image/b2.jpg";
-                i2='b2';
-            }
-            else {
-                image2.src ="image/a2.jpg";
-                i2='a2';
-            }
+    }
+    function convert(val, donvi) {
+        let result;
+        if (donvi == "met") {
+            result = 3.279 * val;
+            return result;
+        } else if (donvi == "feet") {
+            result = 0.305 * val;
+            return result;
         }
-        if (changeImage=='image3'){
-            if (i3=='a3') {
-                image3.src ="image/b3.jpg";
-                i3='b3';
-            }
-            else {
-                image3.src ="image/a3.jpg";
-                i3='a3';
-            }
-        }
-        if (changeImage=='image4'){
-            if (i4=='a4') {
-                image4.src ="image/b4.jpg";
-                i4='b4';
-            }
-            else {
-                image4.src ="image/a4.jpg";
-                i4='a4';
-            }
-        }
-        if (changeImage=='image5'){
-            if (i5=='a5') {
-                image5.src ="image/b5.jpg";
-                i5='b5';
-            }
-            else {
-                image5.src ="image/a5.jpg";
-                i5='a5';
-            }
-        }
-        if (i1.substr(0,1)==i2.substr(0,1) && i2.substr(0,1)==i3.substr(0,1) && i3.substr(0,1)==i4.substr(0,1) && i4.substr(0,1)==i5.substr(0,1)){
-
-            // setTimeout(function(){ alert("done"); }, 100);
-            for(let i=1;i<=5;i++) {
-                document.getElementById('image'+i).style.borderColor = 'red';
-            }
-        } else {
-            for (let i=1;i<=5;i++){
-                document.getElementById('image'+i).style.borderColor = 'white';
-            }
-        }
-
     }
 </script>
 </body>

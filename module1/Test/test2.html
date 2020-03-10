@@ -2,30 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ham kiem tra so nguyen to</title>
 </head>
 <body>
 <script>
-    let count=0;
-    let number=2;
-    let result=""
-    while(count<20) {
-        let status=true;
-        for (let i = 2; i <= Math.sqrt(number); i++) {
-            if (number % i === 0) {
-                status =false;
-                break;
+    let num = prompt("Nhap vao mot so tu nhien bat ky");
+    alert(isPrime(num));
+    function isPrime(number){
+        for (let j=2;j<number;j++){
+            if (number % j == 0){
+                return false;
             }
         }
-        if (status) {
-            count++;
-            result+= number+" ";
-        }
-        number++;
+        return true;
     }
-    document.write(result);
-    // let number = parseInt(prompt("Enter number: "), 0);
-    // let status=false;    ​
 </script>
 </body>
 </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<label for="inputTem">Change from F to C</label><br>
+<input type="text" id="inputTem"><button onclick="changeT">Change</button><br>
+<div id="result"></div>-->
+<script>
+    function changeTemperature(temF) {
+        return (temF-32)/1.8;
+    }
+    let temFara=parseInt(prompt('Enter Fara:'));
+    let changeTem=changeTemperature(temFara);
+    alert('Nhiệt độ từ độ F sang độ C là: '+changeTem);
+    /*function changeTemperature(temF) {
+        return (temF-32)/1.8;
+    }
+    function changeT() {
+        let tem=document.getElementById('inputTem');
+        let tem2=parseFloat(tem.value);
+        let changeTem=changeTemperature(tem2);
+        document.getElementById('result').innerHTML=changeTem;
+
+    }*/
+</script>
+<!--<form>
+    <p>
+        <label>Fahrenheit</label>
+        <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
+               oninput="temperatureConverter(this.value)"
+               onchange="temperatureConverter(this.value)">
+    </p>
+    <p>Celsius: <span id="outputCelsius"></span></p>
+</form>
+
+<script>
+
+    function temperatureConverter(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
+    }
+    </script>-->
+</body>
+</html>

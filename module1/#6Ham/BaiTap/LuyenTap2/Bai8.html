@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let xyz=new Array(5);
+    let k=0;
+    while (k<5){
+        xyz[k]=parseInt(prompt('Nhập xyz['+k+']'));
+        k++
+    }
+    document.write(xyz+'<br/>');
+    function reArray(arr) {
+        let first=0;
+        let last=arr.length-1;
+        while (first<last){
+            let changeE=arr[first];
+            arr[first]=arr[last];
+            arr[last]=changeE;
+            first++;
+            last--;
+        }
+        document.write('['+arr+']');
+    }
+    reArray(xyz);
+</script>
+</body>
+</html>

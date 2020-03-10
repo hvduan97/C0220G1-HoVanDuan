@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="nhanthamso()">Click</button>
+<script>
+    let arr1=['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let arr2=['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    function nhanthamso(str) {
+        str=prompt('Nhập tên ngôi sao bạn muốn tìm chòm sao của nó:');
+        for (let i=0;i<arr1.length;i++){
+            if (arr1.indexOf(str)==-1){
+                return alert('Không có chòm sao đó');
+            }
+            else {
+                return alert(arr2[arr1.indexOf(str)]);
+            }
+        }
+    }
+</script>
+</body>
+</html>
