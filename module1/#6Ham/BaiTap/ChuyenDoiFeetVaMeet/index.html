@@ -5,6 +5,34 @@
     <title>Title</title>
 </head>
 <body>
-
+<input type="text" id="enterValue">
+<select name="" id="sel1">
+    <option value="meet">meet</option>
+    <option value="feet">feet</option>
+</select>
+<select name="" id="sel2">
+    <option value="meet">meet</option>
+    <option value="feet">feet</option>
+</select>
+<button onclick="changeFeetMeet()">Convert</button>
+<p id="result"></p>
+<script>
+    function changeFeetMeet() {
+        let kq=0;
+        let valueInput=document.getElementById('enterValue');
+        let valueSel1=document.getElementById('sel1').value;
+        let valueSel2=document.getElementById('sel2').value;
+        if (valueSel1==='meet' && valueSel2==='feet'){
+            kq=valueInput.value*3.279;
+        }
+        else if (valueSel1==='feet' && valueSel2==='meet'){
+            kq=valueInput.value*0.305;
+        }
+        else {
+            kq=valueInput.value;
+        }
+        document.getElementById('result').innerHTML=kq;
+    }
+</script>
 </body>
 </html>

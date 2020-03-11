@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="enterPos()">ChangeValue</button><br><br>
+<p id="tet"></p>
+<script>
+    let myArray=new Array(Array(0,0,0,0,0), Array(0,0,0,0,0), Array(0,0,0,0,0), Array(0,0,0,0,0), Array(0,0,0,0,0));
+    let bang = "<table id='banG' width='500' border='2' cellspacing='0' cellpadding='15'>";
+    for (let i = 0; i < myArray.length; i++) {
+        for (let j = 0; j < myArray[i].length; j++) {
+            bang += "<th>"+ myArray[i][j] +"</th>";
+        }
+        bang+="<tr></tr>";
+    }
+    document.getElementById("tet").innerHTML=bang;
+    function enterPos() {
+        let x=parseInt(prompt('Nhập X'));
+        let y=parseInt(prompt('Nhập Y'));
+        /*myArray[x][y]='x';
+        document.write(myArray[x][y]);*/
+        myArray[x][y]='x';
+        let bang = "<table id='banG' width='500' border='2' cellspacing='0' cellpadding='15'>";
+        for (let i = 0; i < myArray.length; i++) {
+            for (let j = 0; j < myArray[i].length; j++) {
+                bang += "<th>"+ myArray[i][j] +"</th>";
+            }
+            bang+="<tr></tr>";
+        }
+        document.getElementById("tet").innerHTML=bang;
+    }
+</script>
+</body>
+</html>

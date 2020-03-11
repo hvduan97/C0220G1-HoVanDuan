@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let x=prompt('Nhập:');
+    let str=x.toString();
+    alert(check(str));
+    function check(arr) {
+       // if (arr[0]==arr[arr.length])
+        for (let i=0;i<arr.length;i++){
+            if (arr[i]==arr[(arr.length-1)-i]){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+</script>
+</body>
+</html>

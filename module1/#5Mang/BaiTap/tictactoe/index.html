@@ -5,6 +5,28 @@
     <title>Title</title>
 </head>
 <body>
-
+<p id="posi"></p>
+<script>
+    let caroChess=new Array(Array(' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+                            Array(' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+                            Array(' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+                            Array(' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+                            Array(' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+                            Array(' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+                            Array(' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+                            Array(' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+                            Array(' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+                            Array(' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),);
+    let createTable='<table width="500" border="2" cellspacing="0" cellpadding="15">'
+        for(let i=0;i<caroChess.length;i++){
+            createTable+='<tr>';
+            for (let j=0;j<caroChess[i].length;j++){
+                createTable=createTable+'<td>'+caroChess[i][j]+'</td>';
+            }
+            createTable+='<tr>';
+        }
+    createTable+='</table>';
+    document.getElementById('posi').innerHTML=createTable;
+</script>
 </body>
 </html>
