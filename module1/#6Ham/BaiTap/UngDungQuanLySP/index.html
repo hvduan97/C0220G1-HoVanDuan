@@ -5,6 +5,18 @@
     <title>Title</title>
 </head>
 <body>
-
+<label for="addProduct">Add Product</label><br>
+<input type="text" id="addProduct"><button onclick="addPro()">ADD</button><br><br>
+<label for="listProducr">List Product</label><br>
+<div id="listProduct"></div>
+<script>
+    let x=0;
+    let arr=Array();
+    function addPro() {
+        arr[x]=document.getElementById('addProduct').value;
+        document.getElementById('listProduct').innerHTML=arr[x];
+        x++;
+    }
+</script>
 </body>
 </html>

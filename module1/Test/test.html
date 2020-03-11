@@ -1,41 +1,120 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+
+@hvduan97
+Learn Git and GitHub without any code!
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+
+
+ngocsonqni
+/
+C0220G1-NguyenNgocSon
+1
+00
+Code Issues 0 Pull requests 0 Actions Projects 0 Wiki Security Insights
+C0220G1-NguyenNgocSon/C0220G1/Module1/6-Ham/BaiTap/QuanLySanPham.html
+@ngocsonqni ngocsonqni addfile
+5159c06 2 days ago
+84 lines (81 sloc)  2.77 KB
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Chuyen doi giua feet va met</title>
+    <title>QuanLySanPham</title>
+    <style>
+        table, tr, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: 1px solid green;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            float: left;
+        }
+
+        .button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
 </head>
 <body>
-<h1>Feet <--> Met</h1><br>
-<input type="text" id="input">&#160;<select id="donVi">
-    <option value="met">Met</option>
-    <option value="feet">Feet</option>
-</select>&#160;<button onclick="show()">Convert</button>
-<br>
-<hr width="315px" style="position: absolute;left: 0">
-<br>
-<p id="result"></p>
+<button  class="button" type="button" onclick="addSP()"  value="menu">Add product</button>
+<!--<button  class="button" type="button" onclick="showSP()"  value="menu">Display product</button>-->
+<button  class="button" type="button" onclick="editSP()"  value="menu">Edit product</button>
+<button  class="button" type="button" onclick="delSP()"  value="menu">delete product</button>
+<br><br><br>
+<table border="1" id="show"></table>
 <script>
-    function show(){
-        let val = document.getElementById("input");
-        let donVi = document.getElementById("donVi");
+    let a=Array();
+    function showSP() {
+        let show='';
+        show+='<tr>'+'<th>'+'So thu tu'+'</th>'+'<th>'+'Ten San pham'+'</th>'+'</tr>';
+        // document.write('<table border="1">'+'<tr>'+'<th>'+'So thu tu'+'</th>'+'<th>'+'Ten San pham'+'</th>'+'</tr>');
+        for (let i=1;i<=a.length;i++){
+            show+='<tr>'+'<th>'+i+'</th>'+'<th>'+a[i-1]+'</th>'+'</tr>';
+            // document.write('<tr>');
+            // document.write('<th>'+i+'</th>');
+            // document.write('<th>'+a[i-1]+'</th>');
+            // document.write('</tr>');
+        }
+        document.getElementById('show').innerHTML=show;
 
-        let result = convert(val.value,donVi.value);
-        if (donVi.value=="met"){
-            document.getElementById("result").innerHTML = result+" feet";
-        }else if (donVi.value=="feet"){
-            document.getElementById("result").innerHTML = result+" met";
-        }
+        // document.write('</table>');
     }
-    function convert(val, donvi) {
-        let result;
-        if (donvi == "met") {
-            result = 3.279 * val;
-            return result;
-        } else if (donvi == "feet") {
-            result = 0.305 * val;
-            return result;
+    function addSP() {
+        let aLength=prompt('nhap so luong them vao')*1;
+        for (let i=1;i<=aLength;i++) {
+            a.push(prompt('them san pham thu '+i+' vao danh sach'));
         }
+        showSP();
+    }
+    function editSP() {
+        let aEdit=prompt('Ban muon thay doi ten hang nao?');
+        for (let i=0;i<a.length;i++){
+            if (aEdit==a[i]){
+                a[i]=prompt(a[i]+' duoc thay doi thanh:');
+            }
+        }
+        showSP();
+    }
+    function delSP() {
+        let del=prompt('Ban muon xoa ten hang nao?');
+        for (let i=0;i<a.length;i++){
+            if (del==a[i]){
+                a.splice(i,1);
+            }
+        }
+        showSP();
     }
 </script>
 </body>
 </html>
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
