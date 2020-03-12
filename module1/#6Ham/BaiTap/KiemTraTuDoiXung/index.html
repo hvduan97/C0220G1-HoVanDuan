@@ -12,13 +12,14 @@
     function check(arr) {
        // if (arr[0]==arr[arr.length])
         for (let i=0;i<arr.length;i++){
-            if (arr[i]==arr[(arr.length-1)-i]){
-                return true;
-            }
-            else {
+            if (arr[i]!==arr[(arr.length-1)-i]){
                 return false;
             }
+            /*else {
+                return false;
+            }*/
         }
+        return true;
     }
 </script>
 </body>
