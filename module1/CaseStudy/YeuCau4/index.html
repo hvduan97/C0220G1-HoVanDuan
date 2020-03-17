@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>               
+        var arr=new Array(numberCus);        
+        var numberCus=parseInt(prompt('Nhập số khách hàng bạn muốn tạo:'));
+        var tiepTuc;
+        do{
+        let chooseYour=parseInt(prompt('Nhập yêu cầu bạn muốn:\n1.Add Name\n2.Delete Name'));         
+        switch(chooseYour){
+            case 1:{   
+                var namePlus="";             
+                var k=0;                                
+                while(k<numberCus){
+                    arr[k]=prompt('Nhập tên người thứ '+(k+1));
+                    namePlus+=(k+1)+'. '+arr[k]+'\n';
+                    k++;                    
+                }
+               alert('Danh sách tên khách hàng là:\n'+namePlus);
+               for(let i=0;i<arr.length-1;i++){
+                   for(let j=i+1;j<arr.length;j++){
+                       if (arr[i]<arr[j]){
+                           let temp=arr[i];
+                                arr[i]=arr[j];
+                                arr[j]=temp;
+                       }                    
+                   }                                                    
+               }
+               namePlus='';
+               for(let h=0;h<arr.length;h++){
+                namePlus+=(h+1)+'. '+arr[h]+'\n';  
+               }
+               alert('Danh sách sau khi sắp xếp: '+namePlus);
+               tiepTuc = prompt('Bạn có muốn tiếp tuc không Y/N');
+            }
+            break;
+            case 2:{
+                alert('Danh sách khách hàng: '+namePlus);
+                let deleteName=prompt('Nhập tên bạn muốn xóa:');
+                for(let i=0;i<arr.length;i++){
+                    if(arr[i].indexOf(deleteName)!==-1){
+                        if(i===arr.length){
+                            arr.pop();
+                        }else{
+                        for(let j=i;j<arr.length;j++){
+                            arr[j]=arr[j+1];
+
+                        }
+                        arr.pop();                        
+                    }
+                    }
+                }
+                namePlus='';
+                for(let i=0;i<arr.length;i++){
+                    namePlus+=(i+1)+'. '+arr[i]+'\n';
+                }
+                alert(namePlus);
+            }
+            break;
+        }
+        }while(tiepTuc === "Y");
+    </script>
+</body>
+</html>
