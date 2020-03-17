@@ -2,73 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>xay dung lop mo ta dien thoai</title>
 </head>
-<body>
 <script>
-    /*let diachi=prompt('nhap dia chi');
-    let thoigian=prompt('nhap thoi gian');
-    let loaicustomer=prompt('nhap loai cus');
-    let loaidichvu=prompt('nhập loại dịch vụ');*/
-    let dn='Đà Nẵng';
-    let h='Huế';
-    let qn='Quảng Nam';
-    let giamgiatheodiachi=0;
-    switch (address) {
-        case dn: giamgiatheodiachi=20;
-        break;
-        case h: giamgiatheodiachi=10;
-        break;
-        case qn: giamgiatheodiachi=5;
-        break;
-        default: giamgiatheodiachi;
-    }
-    let songay=parseInt(rentdays);
-    let giamgiatheothoigian=0;
-    if (songay>7){
-        giamgiatheothoigian=30;
-    }
-    else if (songay>4){
-        giamgiatheothoigian=20;
-    }
-    else if (songay>=2){
-        giamgiatheothoigian=10;
-    }
-    else {
-        giamgiatheothoigian=0;
-    }
-    let giamgiatheoloaikhachang=0;
-    let d='Diamond';
-    let g='Gold';
-    let s='Silver';
-    let p='Platium';
-    let m='Member';
-    switch (typeCustomer) {
-            case d: giamgiatheoloaikhachang=15;
-            break;
-            case p: giamgiatheoloaikhachang=10;
-            break;
-            case g: giamgiatheoloaikhachang=5;
-            break;
-            case s: giamgiatheoloaikhachang=2;
-            break;
-            case m: giamgiatheoloaikhachang=0;
-    }
-    let sotiengiamgia=giamgiatheoloaikhachang+giamgiatheothoigian+giamgiatheodiachi;
-   /* alert('so tien giam gia la'+sotiengiamgia);*/
-    let v='Villa';
-    let ho='House';
-    let ro='Room';
-    let gialoaidichvu=0;
-    switch (service) {
-            case v: gialoaidichvu=500;
-            break;
-            case ho: gialoaidichvu=300;
-            break;
-            case ro: gialoaidichvu=100;
-    }
-    let sotienphaitra=gialoaidichvu*songay-sotiengiamgia;
-    alert('Số tiền phải trả là '+sotienphaitra);
+    let Office = " ";
+    let Mobile = function (mobileStatus, baterry) {
+        this.mobileOn = mobileStatus;
+        this.Baterry = baterry;
+        this.smsing = " ";
+        this.receiveSms = new Array(0);
+        this.transSms = new Array(0);
+        this.getMobileStatus = function () {
+            if (this.mobileOn && this.Baterry > 0) {
+                return true;
+            } else if (this.mobileOn === false || this.Baterry === 0) {
+                return false;
+            }
+        };
+        this.setMobileStatus = function (status) {
+            if (this.Baterry === 0) {
+                this.mobileOn = false;
+            } else {
+                this.mobileOn = status;
+            }
+        };
+        this.addBaterry = function (bateryStatus) {
+            if (bateryStatus === true && this.Baterry < 100) {
+                this.Baterry++;
+            }
+        };
+        this.writeSms = function (writing) {
+            if (this.mobileOn) {
+                this.smsing = writing;
+                this.Baterry--;
+            }
+        };
+        this.tranSms = function () {
+            if (this.mobileOn) {
+                Office = this.smsing;
+                this.transSms.push(this.smsing);
+                this.Baterry--;
+            }
+        };
+        this.receiSms = function () {
+            if (this.mobileOn) {
+                this.receiveSms.push(Office);
+                this.Baterry--;
+            }
+        }
+    };
+    let iphone = new Mobile(true, 54);
+    let nokia = new Mobile(true, 60);
+    nokia.writeSms("xin chao!!");
+    nokia.tranSms();
+    iphone.receiSms();
+    alert(iphone.receiveSms[0]);
+    iphone.writeSms("Hello friend");
+    iphone.tranSms();
+    nokia.receiSms();
+    alert(nokia.receiveSms[0]);
+    setInterval(function () {
+        nokia.addBaterry(true);
+    }, 1000);
+    setInterval(function () {
+        iphone.addBaterry(false);
+    }, 1000);
+    setInterval(function () {
+        console.log(nokia.Baterry);
+        console.log(iphone.Baterry);
+    }, 1000);
 </script>
 </body>
 </html>

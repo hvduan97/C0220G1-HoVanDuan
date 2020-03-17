@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;">
+    <script>
+        function circle(x,y,radius) {
+            this.x=x;
+            this.y=y;
+            this.radius=radius;
+        }
+        // Vẽ hình tròn với kích thước cố định
+       /* function creatCircle() {
+            var ctx=document.getElementById('myCanvas').getContext('2d');
+            var Circle=new circle(500,500,80);
+            ctx.beginPath();
+            ctx.arc(Circle.x,Circle.y,Circle.radius,0,2*Math.PI);
+            ctx.fill();
+        }
+        creatCircle();*/
+       // Vẽ hình tròn vs bán kính ngẫu nhiên
+        /*function createCircle(){
+            var ctx=document.getElementById('myCanvas').getContext('2d');
+            var changeRadius=Math.floor(Math.random()*80);
+            var Circle=new circle(500,500,changeRadius);
+            ctx.beginPath();
+            ctx.arc(Circle.x,Circle.y,Circle.radius,0,2*Math.PI);
+            ctx.fill();
+        }
+        createCircle();*/
+        // Vẽ hình tròn với màu ngẫu nhiên
+        /*function getRandomHex() {
+            return Math.floor(Math.random()*255);
+        }
+        function getColor() {
+            var red=getRandomHex();
+            var blue=getRandomHex();
+            var green=getRandomHex();
+            return "rgb(" + red + "," + blue + "," + green +")";
+        }
+        function creatCircle() {
+            var ctx=document.getElementById('myCanvas').getContext('2d');
+            var Circle=new circle(500,500,80);
+            var colorCircle=getColor();
+            ctx.beginPath();
+            ctx.arc(Circle.x,Circle.y,Circle.radius,0,2*Math.PI);
+            ctx.fillStyle=colorCircle;
+            ctx.fill();
+        }
+        creatCircle();*/
+    //    Vẽ được hình tròn với vị trí ngẫu nhiên
+        /*function getRandomHex() {
+            return Math.floor(Math.random()*255);
+        }
+        function getColor() {
+            var red=getRandomHex();
+            var blue=getRandomHex();
+            var green=getRandomHex();
+            return "rgb(" + red + "," + blue + "," + green +")";
+        }
+        function creatCircle() {
+            var ctx=document.getElementById('myCanvas').getContext('2d');
+            var x=Math.floor(Math.random()*window.innerWidth);
+            var y=Math.floor(Math.random()*window.innerHeight);
+            var Circle=new circle(x,y,80);
+            var colorCircle=getColor();
+            ctx.beginPath();
+            ctx.arc(Circle.x,Circle.y,Circle.radius,0,2*Math.PI);
+            ctx.fillStyle=colorCircle;
+            ctx.fill();
+        }
+        creatCircle();*/
+    //    Vẽ được 2 hình tròn
+       /* function getRandomHex() {
+            return Math.floor(Math.random()*255);
+        }
+        function getColor() {
+            var red=getRandomHex();
+            var blue=getRandomHex();
+            var green=getRandomHex();
+            return "rgb(" + red + "," + blue + "," + green +")";
+        }
+        function creatCircle() {
+            var ctx=document.getElementById('myCanvas').getContext('2d');
+            var x=Math.floor(Math.random()*window.innerWidth);
+            var y=Math.floor(Math.random()*window.innerHeight);
+            var Circle=new circle(x,y,80);
+            var colorCircle=getColor();
+            ctx.beginPath();
+            ctx.arc(Circle.x,Circle.y,Circle.radius,0,2*Math.PI);
+            ctx.fillStyle=colorCircle;
+            ctx.fill();
+        }
+        creatCircle();
+        creatCircle();*/
+    //   Vẽ nnhiều hình tròn
+        function getRandomHex() {
+            return Math.floor(Math.random()*255);
+        }
+        function getColor() {
+            var red=getRandomHex();
+            var blue=getRandomHex();
+            var green=getRandomHex();
+            return "rgb(" + red + "," + blue + "," + green +")";
+        }
+        function creatCircle() {
+            var ctx=document.getElementById('myCanvas').getContext('2d');
+            var x=Math.floor(Math.random()*window.innerWidth);
+            var y=Math.floor(Math.random()*window.innerHeight);
+            var Circle=new circle(x,y,80);
+            var colorCircle=getColor();
+            ctx.beginPath();
+            ctx.arc(Circle.x,Circle.y,Circle.radius,0,2*Math.PI);
+            ctx.fillStyle=colorCircle;
+            ctx.fill();
+        }
+        function createMoreCircle() {
+            for (let i=1;i<Math.floor((Math.random() * 10) + 2);i++){
+                creatCircle();
+            }
+        }
+        createMoreCircle();
+    </script>
+</body>
+</html>

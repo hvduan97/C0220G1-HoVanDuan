@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // const CELCIUS=25;
+    class Temperature{
+        constructor(temC) {
+            this.temC=temC;
+        }
+        /*enterTem(){
+            while (this.tem>=-273){
+                this.tem=
+            }
+        }*/
+        convertCelciusToFaraheit(){
+            return (9/5)*this.temC+32;
+        }
+        convertCelciusToKelvin(){
+            return this.temC+273;
+        }
+    }
+    let enterC=parseInt(prompt("Nhập nhiệt độ C"));
+    while (enterC<-273){
+        enterC=parseInt(prompt("Nhiệt độ phải >-273. Xin nhập lại"));
+    }
+    let temper=new Temperature(enterC);
+    document.write('Nhiệt độ F là: '+temper.convertCelciusToFaraheit()+'<br/>'+
+        ' Nhiệt độ K là: '+temper.convertCelciusToKelvin());
+</script>
+</body>
+</html>

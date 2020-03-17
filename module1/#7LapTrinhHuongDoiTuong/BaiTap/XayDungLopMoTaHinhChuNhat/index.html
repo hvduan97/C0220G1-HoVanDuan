@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1350" height="600" style="border:1px solid #000000;"></canvas>
+<script>
+    class Rectangle{
+        constructor(xWidth,yHeight) {
+            this.xWidth=xWidth;
+            this.yHeight=yHeight;
+        }
+        getPerimeter(){
+            return (this.xWidth+this.yHeight)*2;
+        }
+        getArea(){
+            return this.xWidth*this.yHeight;
+        }
+        createRectangle(){
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.fillRect(200,200,this.xWidth,this.yHeight);
+            /*ctx.beginPath();
+            ctx.moveTo(200,200);
+            ctx.lineTo(200+this.xWidth,200);
+            ctx.moveTo(200,200);
+            ctx.lineTo(200,200+this.yHeight);
+            ctx.moveTo(200,200+this.yHeight);
+            ctx.lineTo(200+this.xWidth,200+this.yHeight);
+            ctx.moveTo(200+this.xWidth,200);
+            ctx.lineTo(200+this.xWidth,200+this.yHeight);
+            ctx.closePath();*/
+            /*ctx.lineTo(500+this.xWidth,200);
+            ctx.lineTo(500,200+this.yLength);*/
+            // ctx.stroke();
+            ctx.fill();
+        }
+    }
+    let xr=parseInt(prompt("nhập chiều rộng"));
+    let yr=parseInt(prompt('Nhập chiều cao'));
+    let rectangle= new Rectangle(xr,yr);
+    let x=rectangle.getArea();
+    let y=rectangle.getPerimeter();
+    alert('chu vi la '+y+' Diện thích là: '+x);
+    rectangle.createRectangle();
+
+</script>
+</body>
+</html>

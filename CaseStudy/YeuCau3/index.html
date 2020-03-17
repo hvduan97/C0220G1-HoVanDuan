@@ -7,7 +7,21 @@
 <body>
 <script>
     let  check=false;
-    let name=prompt("Enter Full Name");
+    let tempName=" ";
+    name=prompt("Enter Full Name");
+    name=name.trim().toLowerCase();
+    for (let i=0;i<name.length;i++){
+        if (name.charAt(i)===" " && name.charAt(i+1)===" "){
+            continue;
+        }
+        if (i===0 || name.charAt(i-1)===" "){
+            tempName+=name.charAt(i).toUpperCase();
+            continue;
+        }
+        tempName+=name.charAt(i);
+    }
+    name=tempName;
+    alert(name);
     do {
         let idCard=prompt("Enter ID Card");
         if (!isNaN(idCard)){
@@ -24,7 +38,30 @@
         check=true;
     }while (!check);
     check=false;
-    let birthDay=prompt("Enter BirthDay");
+    /*let birthDay=prompt("Enter BirthDay");*/
+    let birthday, sinhnhat, day, month, year;
+    do {
+        sinhnhat = true;
+        birthday = prompt("Ngay thang nam sinh (dd/mm/yyyy): ");
+        day = birthday.substring(0, 2);
+        month = birthday.substring(3, 5);
+        year = birthday.substring(6, 10);
+        if (birthday.length == 10) {
+            if ((birthday.substring(2, 3) == "/") && (birthday.substring(5, 6) == "/")) {
+                if (isNaN(day) == false && isNaN(month) == false && isNaN(year) == false) {
+                    if (Number.isInteger(parseInt(day)) && Number.isInteger(parseInt(month)) && Number.isInteger(parseInt(year))) {
+                        if ((day > 0 && day < 32) && (month > 0 && month < 13) && (year > 1000 && year < 2021)) {
+                            sinhnhat = false;
+                        }
+                    }
+                }
+            }
+
+        }
+        if (sinhnhat == true) {
+            alert("Ban da nhap sai. Vui long nhap lai");
+        }
+    } while (sinhnhat)
     let email=prompt("Enter Email");
        while (1){
            let countAco=0;
