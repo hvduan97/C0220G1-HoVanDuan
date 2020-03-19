@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkAcount(str){
+            regexp=/^[_a-z0-9]{6,}$/;
+            if(regexp.test(str)){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        let check=prompt('Nhập acount cần kiểm tra');
+        if(checkAcount(check)){
+            alert('Acount hợp lệ');
+        }
+        else{
+            alert('Acount không hợp lệ');
+        }
+    </script>
+</body>
+</html>
