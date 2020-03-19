@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Remote{
+            constructor(codeChanel,volumeWant){
+                this.codeChanel=codeChanel;
+                this.volumeWant=volumeWant;
+            }
+            getCodeChanel(){
+                return this.codeChanel;
+            }
+            getVolume(){                
+                return this.volumeWant;
+            }                     
+        }
+        class Tivi{
+            constructor(chanel,volume,status){
+                this.chanel=chanel;
+                this.volume=volume;
+                this.status=status;
+            }
+            getChanel(){
+                return this.chanel;
+            }
+            getStatus(){
+                return this.status;
+            }
+            chanelTV(newTVchanel){
+                this.chanel=newTVchanel;
+                console.log('Kênh hiện tại là: '+ this.chanel);
+            }
+            volumeTV(tangVolume){
+                this.tangVolume=tangVolume;
+                if(this.tangVolume>0){
+                    this.volume+=this.tangVolume;
+                    console.log('Mức volume hiện tại của TV là:'+this.volume);
+                }
+                else{
+                    console.log('Mức volume hiện tại của TV là:'+this.volume);
+                }
+            }
+        }
+        let chChanel=prompt('Nhập kênh bạn muốn chuyển đến');
+        let chVolume=parseInt(prompt('Nhập volume bạn muốn tăng'));    
+        let statusTV=true; 
+        let remote=new Remote(chChanel,chVolume);
+        let tivi=new Tivi(3,3,statusTV);               
+        if(tivi.getStatus()){          
+            tivi.chanelTV(remote.getCodeChanel());
+            tivi.volumeTV(remote.getVolume());
+        }
+        else{
+            console.log('Bật tivi lên mà xem bạn ơi');
+        }
+    </script>
+</body>
+</html>

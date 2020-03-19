@@ -1,58 +1,62 @@
 class Apple {
-    constructor(weight) {
-        this.weight=weight;
+    constructor(weight) {        
+        this.appleWeight = weight;
     }
-    getWeight(){
-        return this.weight;
+
+    getWeight() {
+        return this.appleWeight;
     }
-    decrease(){
-        return this.weight--;
-    }
-    isEmpty(){
-        if (this.weight>0){
-            return true;
+
+    decrease() {
+        this.appleWeight--;
+        if (this.appleWeight<0){
+            this.empty();
         }
-        else {
-            return false;
-        }
+        return this.appleWeight;
+    }
+
+    empty() {
+        this.appleWeight = 0;
     }
 }
 class Human {
-    constructor(name,gender,weight) {
-        this.name=name;
-        this.gender=gender;
-        this.weight=weight;
+    constructor(name, gender, weight) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+
     }
-    getName(){
+    say() {
+        console.log("Hello");
+    }
+    eat(appleWeight) {
+        this.appleWeight = appleWeight;
+        if (this.appleWeight >= 0) {
+            this.weight++;
+        }
+    }
+    getValueApple(appleWeight) {
+        this.appleWeight = appleWeight;
+        return this.appleWeight;
+    }
+    getName() {
         return this.name;
     }
-    setName(name){
-        this.name=name;
-    }
-    getWeight(){
-        return this.weight;
-    }
-    setWeight(weight){
-        this.weight=weight;
-    }
-    say(){
-        console.log('Hello World');
-    }
-    checkApple(){
-        this.
-    }
-    eat(){
-        if (this.checkApple()){
-            this.weight++;
-            Apple.decrease();
-        }
-        else {
-            console.log('Hết táo');
-        }
+    getGender() {
+        return this.gender;
     }
 
+    getWeight() {
+        return this.weight;
+    }
 }
-let apple=new Apple(10);
-let human=new Human('Duan','male',20);
-human.eat();
-console.log('cân nặng của táo '+apple.getWeight()+' Cân người: '+ human.getWeight());
+let tao = new Apple(10);
+let nguoi1 = new Human("Adam", "Man", 60);
+let nguoi2 = new Human("Eva", "Woman", 40);
+while( tao.appleWeight > 0){
+    nguoi1.eat(tao.decrease());
+    nguoi2.eat(tao.decrease());
+    console.log("khối lượng Adam lúc này là: " + nguoi1.getWeight());
+    console.log("khối lượng Eva lúc này là : " + nguoi2.getWeight());
+    console.log("khối lượng táo còn lại: " + tao.getWeight());
+}

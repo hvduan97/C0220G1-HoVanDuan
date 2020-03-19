@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Mouse{
+            constructor(name,mouseWeight,mouseSpeed,statusMouse){
+                this.name=name;
+                this.mouseWeight=mouseWeight;
+                this.mouseSpeed=mouseSpeed;
+                this.statusMouse=statusMouse;
+            }
+            getSpeedMouse(){
+                return this.mouseSpeed;
+            }
+            getWeightMouse(){
+                return this.mouseWeight;
+            }
+            getStatus(){
+                return this.statusMouse;
+            }
+            say(){
+                console.log('Chít chít, heo miiii!!!!!.....');
+            }                      
+        }
+        class Cat{
+            constructor(name,catWeight,catSpeed){
+                this.name=name;
+                this.catWeight=catWeight;
+                this.catSpeed=catSpeed;
+            }
+            say(){
+                console.log('Meo meo, mày chết với tao chuột ơi kakakakakakkkkk');
+            }
+            getSpeedCat(){
+                return this.catSpeed;
+            }
+            catchMouse(speedMouse,speedCat){
+                this.speedMouse=speedMouse;
+                this.speedCat=speedCat;
+                if(this.speedCat>this.speedMouse){
+                    console.log('Tiêu mày rồi chuột ơi');
+                }
+                else{
+                    console.log('Lêu lêu! Đồ mèo ngu');
+                }
+
+            }
+            eatMouse(eatM,statusM){
+                this.eatM=eatM;
+                this.statusM=statusM;
+                if(this.statusM==true){
+                    return this.catWeight+=this.eatM;
+                }
+                return this.catWeight;
+            }
+        }      
+        let speedOfMouse=prompt('Enter Speed Of Mouse');
+        let speedOfCat=prompt('Enter Speed Of Cat');
+        let statusOfMouse=true;
+        let Tom=new Cat("Tom",20,speedOfCat);
+        let Jerry=new Mouse("Jerry",10,speedOfMouse,statusOfMouse);
+        if(statusOfMouse==true){
+            if(speedOfCat>speedOfMouse){
+                Tom.catchMouse(Jerry.getSpeedMouse(),Tom.getSpeedCat());
+                console.log('Sau khi ăn chuột, mèo ta tăng kí và khối lượng của nó là:'+
+                Tom.eatMouse(Jerry.getWeightMouse(),Jerry.getStatus()));
+            }
+            else{
+                Tom.catchMouse(Jerry.getSpeedMouse(),Tom.getSpeedCat());
+            }
+        }
+        else{
+            console.log('Con chuột này thúi quá, ta không ăn đâu')
+        }
+
+    </script>
+</body>
+</html>

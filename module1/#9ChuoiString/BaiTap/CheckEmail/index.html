@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkEmail(str){
+            regexp=/^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+            if(regexp.test(str)){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        let check=prompt('Nhập email cần kiểm tra');
+        if(checkEmail(check)){
+            alert('Email hợp lệ');
+        }
+        else{
+            alert('Email không hợp lệ');
+        }
+    </script>
+</body>
+</html>
