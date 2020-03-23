@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let word=/[a-z]$/i;
+        let number=/[0-9]$/i;
+        let dem=0;
+        let str=prompt('nhập');
+        for(let i=0;i<str.length;i++){
+            if(word.test(str.charAt(i)) || number.test(str.charAt(i))){
+                dem+=1;
+            }
+        }
+        alert(dem);
+    </script>
+</body>
+</html>

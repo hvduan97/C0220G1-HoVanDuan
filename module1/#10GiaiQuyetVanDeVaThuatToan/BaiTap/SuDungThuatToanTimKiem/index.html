@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function numberPhoneViettel(str){
+            regexp=/^((03[2-9]{1})|(016[2-9]{1}))[0-9]{7}$/;
+            if (regexp.test(str)){
+                return true;
+            }
+            return false;
+        }
+        let enterNumberPhone=prompt('Nhập số điện thoại cần kiểm tra: ');
+        if (numberPhoneViettel(enterNumberPhone)){
+            alert('Là số Viettel');
+        }
+        else{
+            alert('Không phải số Viettel');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[]
+        function addElementArray(){
+            for(let i=0;i<100;i++){
+                arr[i]=Math.floor(Math.random()*100)+1;
+            }
+        }
+        function displayArray(){
+            for(let i=0;i<arr.length;i++){
+                // document.write(arr[i]+'&nbsp&nbsp');
+                if(i%10==0){
+                    document.write('<br/>');
+                }
+                document.write(arr[i]+'&nbsp&nbsp'+'&nbsp&nbsp'+'&nbsp&nbsp');
+            }
+        }
+        function maxValue(){
+            let max=arr[0];
+            let index;
+            for(let i=1;i<arr.length;i++){
+                if(arr[i]>max){
+                    max=arr[i];
+                    index=i;
+                }
+            }
+            document.write('Giá trị lớn nhất của mảng là: '+max+' nằm ở vị trí: '+index);
+        }
+        function minValue(){
+            let min=arr[0];
+            let index;
+            for(let i=1;i<arr.length;i++){
+                if(arr[i]<min){
+                    min=arr[i];
+                    index=i;
+                }
+            }
+            document.write('Giá trị nhỏ nhất của mảng là: '+min+' nằm ở vị trí: '+index);
+        }
+        function countElement(elem){
+            let count=0;
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]===elem){
+                    count++;
+                }
+                else{
+                    count=-1;
+                }
+            }
+            return count;
+        }
+        addElementArray();
+        displayArray();
+        document.write('<br/>');
+        maxValue();
+        document.write('<br/>');
+        minValue();
+        document.write('<br/>');
+        let p=parseInt(prompt('Nhập số phần tử  muốn đếm trong khoảng tứ 1 đến 100'));
+        while(p<=0 || p>100){
+            p=parseInt(prompt('Nhập số phần tử  muốn đếm trong khoảng từ 1 đến 100'));
+        }
+        // countElement(p);
+        document.write('Phần tử '+p+' xuất hiện '+countElement(p)+' lần');
+    </script>
+</body>
+</html>

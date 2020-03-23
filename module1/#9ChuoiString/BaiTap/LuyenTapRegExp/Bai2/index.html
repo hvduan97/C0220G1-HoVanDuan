@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Đếm số nguyên âm/phụ âm trong một chuỗi
+        let nguyenAm=/[ueoai]$/i;
+        let phuAm=/[bcdfghjklmnpqrstvwxyz]$/i;
+        let demNA=0;
+        let demPA=0;
+        let str=prompt("nhập");
+        for(let i=0;i<str.length;i++){
+            if(nguyenAm.test(str.charAt(i))){
+                demNA+=1;
+            }
+            else if(phuAm.test(str.charAt(i))){
+                demPA+=1;
+            }
+        }
+        alert('số nguyên âm là: '+demNA+' và số phụ âm là: '+demPA);
+    </script>
+</body>
+</html>

@@ -7,15 +7,23 @@
 </head>
 <body>
     <script>
-        let arr=[2,4,5,4,6,4,9,7];
-        let check=4;
-        let dem=0;
-        for(let i=0;i<arr.length;i++){
-            if(arr[i]===check){
-                dem+=1;
+        let arr=[]
+        function addElementArray(){
+            for(let i=0;i<100;i++){
+                arr[i]=Math.floor(Math.random()*100)+1;
             }
         }
-        alert(dem);        
+        function displayArray(){
+            for(let i=0;i<arr.length;i++){
+                // document.write(arr[i]+'&nbsp&nbsp');
+                if(i%10==0){
+                    document.write('<br/>');
+                }
+                document.write(arr[i]+'&nbsp&nbsp'+'&nbsp&nbsp'+'&nbsp&nbsp');
+            }
+        }
+        addElementArray();
+        displayArray();
     </script>
 </body>
 </html>

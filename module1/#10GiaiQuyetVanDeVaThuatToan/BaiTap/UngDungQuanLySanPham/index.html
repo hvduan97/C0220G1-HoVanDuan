@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="addPro" onclick="addProduct()">ADD</button>
+    <button onclick="displayProduct()">Display</button><br><br><br>
+    <!-- <button onclick="editProduct()">Edit</button> -->
+    <div id="displayList"></div>
+    <script>
+        // let x=0;
+        let arr=[];
+        function addProduct(){
+            let namPro=prompt('Add Name Product');
+            arr.push(namPro);
+        }
+        function displayProduct(){
+            let e='';
+            for(let i=0;i<arr.length;i++){
+                e+=(i+1)+'. '+arr[i]+' <button onclick="editProduct('+i+')">Edit</button>'+' <button onclick="deleteProduct('+i+')">Delete</button>'+'<br/><br/>';
+            }
+            document.getElementById('displayList').innerHTML=e;
+        }
+        function editProduct(k){
+            arr[k]=prompt('Nhập tên bạn muốn sửa:');
+            displayProduct();
+        }
+        function deleteProduct(k){
+            for(let i=k;i<arr.length;i++){
+                arr[i]=arr[i+1];
+            }
+            arr.pop();
+            displayProduct();
+        }
+        // addProduct();
+        // displayProduct();
+    </script>
+</body>
+</html>

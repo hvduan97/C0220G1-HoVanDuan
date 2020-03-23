@@ -7,8 +7,9 @@
 </head>
 <body>
     <script>
-        function checkAcount(str){
-            regexp=/^[a-z0-9][_a-z0-9]{5,}$/;
+        // regexp=/^[A-Z]{1}[0-9]{4}[G,H,I,K,L,M]{1}$/;
+        function checkNameClass(str){
+            regexp=/^[A,c,p]{1}[0-9]{4}[G,H,I,K,L,M]{1}$/;
             if(regexp.test(str)){
                 return true;
             }
@@ -16,12 +17,12 @@
                 return false;
             }
         }
-        let check=prompt('Nhập acount cần kiểm tra');
-        if(checkAcount(check)){
-            alert('Acount hợp lệ');
+        let nameClass=prompt('Nhập tên class');
+        if(checkNameClass(nameClass)){
+            alert('Tên hợp lệ');
         }
         else{
-            alert('Acount không hợp lệ');
+            alert('Tên không hợp lệ');
         }
     </script>
 </body>

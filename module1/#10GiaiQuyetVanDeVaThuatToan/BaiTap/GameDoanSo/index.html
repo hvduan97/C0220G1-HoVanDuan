@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [];
+        function randomElement() {
+            for (let i = 0; i < 100; i++) {
+                arr[i] = Math.floor(Math.random() * 100) + 1;
+            }
+        }
+        function displayArray() {
+            for (let i = 0; i < arr.length; i++) {
+                if (i % 10 == 0) {
+                    document.write('<br/>');
+                }
+                document.write(arr[i] + '&nbsp&nbsp')
+            }
+        }
+        function sortArray() {
+            let temp = 0;
+            for (let i = 0; i < arr.length - 1; i++) {
+                for (let j = i + 1; j < arr.length; j++) {
+                    if (arr[i] > arr[j]) {
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+        }
+        function searchBinary(elem) {
+            let mid = 0;
+            let first = 0;
+            let last = arr.length - 1;
+            while (first <= last) {
+                console.log(mid);
+                console.log(first)
+                console.log(last);
+                mid = Math.floor((first + last) / 2);
+                if (arr[mid] == elem) {
+                    return mid;
+                }
+                if (arr[mid] < elem) {
+                    first = mid + 1;
+                }
+                if (arr[mid] > elem) {
+                    last = mid - 1;
+                }
+            }
+            return -1;
+        }
+        randomElement();
+        displayArray();
+        document.write('<br/>');
+        document.write('<br/>');
+        document.write('Mảng sau khi đã được sắp xếp tăng dần:');
+        sortArray();
+        displayArray();
+        document.write('<br/>');
+        let abc = parseInt(prompt('Nhập số cần tìm kiếm:'));
+        while (abc <= 0 || abc > 100) {
+            abc = parseInt(prompt('Nhập số cần tìm kiếm:'));
+        }
+        let result = searchBinary(abc)
+        if (result == -1) {
+            document.write(abc + ' Không có trong mảng');
+        }
+        else {
+            document.write(abc + ' có trong mảng, nằm ở vị trí: ' + result);
+        }
+    </script>
+</body>
+
+</html>

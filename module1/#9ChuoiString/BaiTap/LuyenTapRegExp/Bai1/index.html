@@ -7,8 +7,9 @@
 </head>
 <body>
     <script>
-        function checkAcount(str){
-            regexp=/^[a-z0-9][_a-z0-9]{5,}$/;
+        // Kiểm tra chuỗi đưa vào có đúng dạng dd/mm/yyyy
+        function check(str){
+            regexp=/^(0[1-9]|1[0-9]|2[0-9]|3[0-1]|[1-9])\/(0[1-9]|1[0-2]|[1-9])\/([0-9]{4})$/;
             if(regexp.test(str)){
                 return true;
             }
@@ -16,12 +17,12 @@
                 return false;
             }
         }
-        let check=prompt('Nhập acount cần kiểm tra');
-        if(checkAcount(check)){
-            alert('Acount hợp lệ');
+        let enter=prompt('Nhập');
+        if(check(enter)){
+            alert('Hợp lệ');
         }
         else{
-            alert('Acount không hợp lệ');
+            alert('Không hợp lệ');
         }
     </script>
 </body>
