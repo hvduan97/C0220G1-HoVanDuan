@@ -14,8 +14,7 @@
             }
         }
         function displayArray(){
-            for(let i=0;i<arr.length;i++){
-                // document.write(arr[i]+'&nbsp&nbsp');
+            for(let i=0;i<arr.length;i++){                
                 if(i%10==0){
                     document.write('<br/>');
                 }
@@ -66,8 +65,7 @@
         let p=parseInt(prompt('Nhập số phần tử  muốn đếm trong khoảng tứ 1 đến 100'));
         while(p<=0 || p>100){
             p=parseInt(prompt('Nhập số phần tử  muốn đếm trong khoảng từ 1 đến 100'));
-        }
-        // countElement(p);
+        }        
         document.write('Phần tử '+p+' xuất hiện '+countElement(p)+' lần');
     </script>
 </body>

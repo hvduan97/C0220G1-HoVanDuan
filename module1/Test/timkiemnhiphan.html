@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[2,6,7,1,3,9,4,3,8,4,9,2];
+        function sapxepchen(a){
+            let vitri;
+            let giatrichen;
+            for(let i=1;i<a.length;i++){
+                giatrichen=a[i];
+                vitri=i;
+                while(vitri>0 && a[vitri-1]>giatrichen){
+                    a[vitri]=a[vitri-1];
+                    vitri=vitri-1;
+                }
+                a[vitri]=giatrichen;
+            }
+        }
+        function timkiemnhiphan(giatri,a){
+            let mid=0;
+            let first=0;
+            let last=a.length-1;
+            while(first<=last){
+                mid=Math.floor((first+last)/2);
+                if(a[mid]==giatri){
+                    return true;
+                }
+                if(giatri>a[mid]){
+                    first=mid+1;
+                }
+                if(giatri<a[mid]){
+                    last=mid-1;
+                }
+            }
+            return false;
+        }
+        sapxepchen(arr);
+        alert('Mảng sau khi sắp xếp :\n'+arr);
+        let valueCheck=parseInt(prompt('Nhập giá trị cần tìm'));
+        let check=timkiemnhiphan(valueCheck,arr);
+        if(check){
+            alert('tìm thấy');
+        }
+        else{
+            alert('K tìm thấy');
+        }
+    </script>
+</body>
+</html>

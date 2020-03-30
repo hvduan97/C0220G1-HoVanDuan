@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+    <script>
+        class Date{
+            constructor(day,month,year){
+                this.day=day;
+                this.month=month;
+                this.year=year;
+            }
+            getDay(){
+                return this.day;
+            }
+            getMonth(){
+                return this.month;
+            }
+            getYear(){
+                return this.year;
+            }
+            setDay(day){
+                this.day=day;
+            }
+            setMonth(month){
+                this.month=month;
+            }
+            setYear(year){
+                this.year=year;
+            }
+            setDate(day,month,year){
+                this.setDay(day);
+                this.setMonth(month);
+                this.setYear(year);
+            }
+        }   
+
+        let date=new Date(12,08,1997);
+        alert('Ngày '+date.getDay()+' tháng '+date.getMonth()+' năm '+date.getYear());
+        date.setDay(19);
+        date.setMonth(12);
+        date.setYear(2000);
+        alert('Ngày '+date.getDay()+' tháng '+date.getMonth()+' năm '+date.getYear());
+        date.setDate(21,11,1997);
+        alert('Ngày '+date.getDay()+' tháng '+date.getMonth()+' năm '+date.getYear());
+    </script>
+</body>
+</html>

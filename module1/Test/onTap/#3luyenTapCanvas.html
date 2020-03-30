@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" style="border: 1px solid #888; height: 300px; width: 600px;"></canvas>
+    <img src="http://framgia.com/jp/images/logo_common_framgia.png" id="demoImage">
+    <a href="javascript:;" onclick="addImage()">Thêm ảnh</a>
+    <script>
+        class Circle{
+            constructor(x,y,radius){
+                this.x=x;
+                this.y=y;
+                this.radius=radius;
+            }
+            getX(){
+                return this.x;
+            }
+            getY(){
+                return this.y;
+            }
+            getRadius(){
+                return this.radius;
+            }
+        }
+        class Rect{
+            constructor(x,y,width,height){
+                this.x=x;
+                this.y=y;
+                this.width=width;
+                this.height=height;
+            }
+            getX(){
+                return this.x;
+            }
+            getY(){
+                return this.y;
+            }
+            getWidth(){
+                return this.width;
+            }
+            getHeight(){
+                return this.height;
+            }
+        }
+        var canvas = document.getElementById('myCanvas');
+        ctx = canvas.getContext('2d');
+        function addImage() {
+            var img = document.getElementById("demoImage");
+            ctx.drawImage(img,10,10);
+    }
+
+        // function themText(){
+        //     var canvas = document.getElementById('myCanvas');
+        //     var text = "Demo canvas";
+        //     ctx = canvas.getContext('2d');
+        //     ctx.fillStyle = "#FF0000";
+        //     ctx.font = "30px Arial";
+        //     ctx.fillText(text, 10, 50);
+        // }
+        // function drawLine(){
+        //     var canvas = document.getElementById('myCanvas');
+        //     ctx = canvas.getContext('2d');
+        //     ctx.strokeStyle = "#FF0000";
+        //     ctx.moveTo(0,0);
+        //     ctx.lineTo(200,100);
+        //     ctx.stroke();
+        // }
+        // drawLine();
+        // function drawRect(){
+        //     var canvas = document.getElementById('myCanvas'),
+        //     ctx = canvas.getContext('2d');
+        //     let rect=new Rect(10,10,50,40);
+        //     ctx.beginPath();
+        //     ctx.strokeStyle='red';
+        //     ctx.rect(rect.getX(),rect.getY(),rect.getWidth(),rect.getHeight());
+        //     // hàm rect vẽ HCN rỗng, fillRect vẽ HCN đặc
+        //     // ctx.fill();
+        //     ctx.stroke();
+        // }
+        // drawRect();
+        // function drawCircle(){
+        //     var canvas = document.getElementById('myCanvas'),
+        //     ctx = canvas.getContext('2d');
+        //     let circle=new Circle(50,50,40);
+        //     ctx.beginPath();
+        //     ctx.strokeStyle = "#FF0000";
+        //     // hàm arc(tọa độ x,tọa độ y, bán kính, góc bắt đầu, góc kết thúc,chiều vẽ[true:ngược chiều,false:cùng chiều]);
+        //     ctx.arc(circle.getX(),circle.getY(),circle.getRadius(),0,Math.PI,true);
+        //     ctx.fillStyle='red';
+        //     // ctx.fill();
+        //     ctx.stroke();
+        // }
+        // drawCircle();
+    </script>
+</body>
+</html>

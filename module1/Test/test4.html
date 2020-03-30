@@ -7,127 +7,108 @@
 <body>
 <div id="carotable"></div>
 <script>
-    class caro {
-        constructor(x, y) {
-            this.x = x;
-            this.y = y;
-        }
+//Some Variables
+var canvas;
+var ctx;
+var ballX = 90;
+var ballY = 90;
+var xVelocity = 2;
+var yVelocity = 2;
+var color = "#ccff99";
+var ballWidth = 15;
 
-        drawO() {
-            let cordx = this.x * 40;
-            let cordy = this.y * 40;
-            let draw = "<div id='O-" + this.x + "-" + this.y + "' onclick='play(" + this.x + "," + this.y + ")' style='position: absolute;" +
-                "width: " + 40 + "px; height: " + 40 + "px; left: " + cordx + "px;top:" + cordy + "px; border: 1px solid #21e22d;text-align: center" +
-                ";cursor: pointer;color: #ff0a09'></div>";
-            return draw;
-        }
 
-        drawXO(play) {
-            this.Player = play;
-            let xo = document.getElementById("O-" + this.x + "-" + this.y);
-            switch (this.Player) {
-                case "X":
-                    xo.innerHTML = "X";
-                    break;
-                case "O":
-                    xo.innerHTML = "O";
-                    break;
-                default:
-                    xo.innerHTML = "";
-                    break;
-            }
-        }
-    }
+//Gets Canvas + Sets Framerate
+window.onload = function() {
+  canvas = document.getElementById("test");
+  ctx = canvas.getContext("2d");
+  setInterval(draw,1000/60);
+}
 
-    class gameCaro {
-        constructor(hang, cot, divId) {
-            this.hang = hang;
-            this.cot = cot;
-            this.div = divId;
-            this.caro = new Array(this.hang);
-            this.count = 0;
-        }
+//Draw EVERYTHING
+function draw() {
 
-        drawcarotable() {
-            let gameboardiv = document.getElementById(this.div);
+//Color The Canvas Grey
+ctx.fillStyle = "grey";
+ctx.fillRect(0,0,canvas.width,canvas.height);
 
-            for (let i = 0; i < this.hang; i++) {
-                this.caro[i] = new Array(this.cot);
-                for (let j = 0; j < this.cot; j++) {
-                    let cell = new caro(i, j);
-                    this.caro[i][j] = " ";
-                    gameboardiv.innerHTML += cell.drawO() + this.caro[i][j];
-                }
-                gameboardiv.innerHTML += "<br>";
-            }
-        }
+//Draw The Ball
+ctx.beginPath();
+ctx.fillStyle = color;
+ctx.strokeStyle = "black";
+ctx.lineWidth = 2;
+ctx.arc(ballX,ballY,ballWidth,0,Math.PI*2, true);
+ctx.fill();
+ctx.stroke();
+ctx.closePath();
 
-        play(x, y) {
-            let cell = new caro(x, y);
-            if (this.caro[x][y] === " ") {
-                if (this.count % 2 === 0) {
-                    cell.drawXO("X");
-                    this.caro[x][y] = "X";
-                    this.count++;
-                } else if (this.count % 2 !== 0) {
-                    cell.drawXO("O");
-                    this.caro[x][y] = "O";
-                    this.count++;
-                }
-            } else {
-                alert("Vi tri ban chon da duoc chon.vui long chon vi tri khac");
-            }
-        }
+//Change Ball Position
+ballX += xVelocity;
+ballY += yVelocity;
 
-        check() {
+//Bounce Ball Off Left + Choose Color
+if(ballX - ballWidth <= 0) {
+  xVelocity = -xVelocity;
+  changeColor();
+}
 
-            for (let i = 0; i < this.caro.length; i++) {
-                for (let j = 0; j < this.caro[i].length; j++) {
-                    if (this.caro[i][j] === "X" && this.caro[i + 1][j] === "X" && this.caro[i + 2][j] === "X" && this.caro[i + 3][j] === "X") {
-                        alert("Nguoi choi X da chien thang");
-                        location.reload();
-                    } else if (this.caro[i][j] === "O" && this.caro[i + 1][j] === "O" && this.caro[i + 2][j] === "O" && this.caro[i + 3][j] === "O") {
-                        alert("Nguoi choi O da chien thang");
-                        location.reload();
-                    } else if (this.caro[i][j] === "O" && this.caro[i][j + 1] === "O" && this.caro[i][j + 2] === "O" && this.caro[i][j + 3] === "O") {
-                        alert("Nguoi choi O da chien thang");
-                        location.reload();
-                    } else if (this.caro[i][j] === "X" && this.caro[i][j + 1] === "X" && this.caro[i][j + 2] === "X" && this.caro[i][j + 3] === "X") {
-                        alert("Nguoi choi X da chien thang");
-                        location.reload();
-                    } else if (this.caro[i][j] === "X" && this.caro[i + 1][j + 1] === "X" && this.caro[i + 2][j + 2] === "X" && this.caro[i + 3][j + 3] === "X") {
-                        alert("Nguoi choi X da chien thang");
-                        location.reload();
-                    } else if (this.caro[i][j] === "O" && this.caro[i + 1][j + 1] === "O" && this.caro[i + 2][j + 2] === "O" && this.caro[i + 3][j + 3] === "O") {
-                        alert("Nguoi choi O da chien thang");
-                        location.reload();
-                    } else if (this.caro[i][j] === "O" && this.caro[i + 1][j - 1] === "O" && this.caro[i + 2][j - 2] === "O" && this.caro[i + 3][j - 3] === "O") {
-                        alert("Nguoi choi O da chien thang");
-                        location.reload();
-                    } else if (this.caro[i][j] === "X" && this.caro[i + 1][j - 1] === "X" && this.caro[i + 2][j - 2] === "X" && this.caro[i + 3][j - 3] === "X") {
-                        alert("Nguoi choi X da chien thang");
-                        location.reload();
-                    } else if (this.caro[i][j] === "O" && this.caro[i - 1][j + 1] === "O" && this.caro[i - 2][j + 2] === "O" && this.caro[i - 3][j + 3] === "O") {
-                        alert("Nguoi choi O da chien thang");
-                        location.reload();
-                    } else if (this.caro[i][j] === "X" && this.caro[i - 1][j + 1] === "X" && this.caro[i - 2][j + 2] === "X" && this.caro[i - 3][j + 3] === "X") {
-                        alert("Nguoi choi X da chien thang");
-                        location.reload();
-                    }
-                }
-            }
+//Bounce Ball Off Right + Choose Color
+if(ballX + ballWidth >= canvas.width) {
+  xVelocity = -xVelocity;
+  changeColor();
+}
 
-        }
-    }
+//Bounce Ball Off Top + Choose Color
+if(ballY - ballWidth <= 0) {
+  yVelocity = -yVelocity;
+  changeColor();
+}
 
-    let test = new gameCaro(20, 20, "carotable");
-    test.drawcarotable();
-    test.check();
+//Bounce Ball Off Bottom + Choose Color
+if(ballY + ballWidth >= canvas.height) {
+  yVelocity = -yVelocity;
+  changeColor();
+}
 
-    function play(x, y) {
-        test.play(x, y);
-        test.check();
-    }
+//Randomly Choose Ball Color
+function changeColor() {
+
+var x = Math.random()*10;
+var n = Math.ceil(x);
+var nu = n;
+
+  if(nu == 1) {
+    color = "#ffaacc";}
+  
+  if(nu == 2) {
+    color = "orange";}
+
+  if(nu == 3) {
+    color = "teal";}
+
+  if(nu == 4) {
+    color = "turquoise";}
+
+  if(nu == 5) {
+    color = "purple";}
+
+  if(nu == 6) {
+    color = "lightgreen";}
+
+  if(nu == 7) {
+    color = "skyblue";}
+  
+  if(nu == 8) {
+    color = "darkgrey";}
+
+  if(nu == 9) {
+    color = "crimson";}
+  
+  if(nu == 10) {
+    color = "pink";}
+}
+
+}
 </script>
 </body>
 </html>

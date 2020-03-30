@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ham kiem tra so nguyen to</title>
+</head>
+<body>
+<script>
+    function sapxepchen(a){
+        let vitri;
+        let giatrichen;
+        for(let i=1;i<a.length;i++){
+            giatrichen=a[i];
+            vitri=i;
+            while(vitri>0 && a[vitri-1]>giatrichen){
+                a[vitri]=a[vitri-1];
+                vitri=vitri-1;
+            }
+            a[vitri]=giatrichen;
+        }
+    }
+    let arr=[2,5,7,1,9,3,4,7,6,9,1];
+    sapxepchen(arr);
+    alert(arr);
+</script>
+</body>
+</html>

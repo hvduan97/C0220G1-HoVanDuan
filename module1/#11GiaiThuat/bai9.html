@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nhap=prompt('Nhap chuoi');
+        let str=nhap.toString();
+        // a. In ra chuỗi đảo ngược của chuỗi đã cho;
+                // Dùng hàm:
+        function daoNguoc(str){
+            let first=0;
+            let last=str.length-1;
+            while(first<last){
+                let temp=str[first];
+                str[first]=str[last];
+                str[last]=temp;
+                first++;
+                last--;
+            }
+            alert(str);
+        }
+        daoNguoc(str);
+    </script>
+</body>
+</html>

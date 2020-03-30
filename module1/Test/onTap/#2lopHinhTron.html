@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>        
+        class Circle{
+            constructor(radius,color){
+                this.radius=radius;
+                this.color=color;
+            }
+            getRadius(){
+                return this.radius;
+            }
+            getColor(){
+                return this.color;
+            }
+            setRadius(radius){
+                this.radius=radius;
+            }
+            setColor(){
+                this.color=color;
+            }
+            getArea(){
+                return Math.PI*this.radius*this.radius;
+            }
+        }
+        // let ra;
+        function enterRadius(){
+            let ra=parseFloat(prompt('Nhap ban kinh'));
+            return ra;
+        }
+        let circle=new Circle(enterRadius(),'red');
+        let areaCircle=circle.getArea();
+        alert('Dien tich hinh tron la '+areaCircle);
+    </script>
+</body>
+</html>
