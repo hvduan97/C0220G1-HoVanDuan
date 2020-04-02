@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str=prompt('nhap chuoi');
+        // a. In mỗi từ trên mỗi dòng
+
+        // function printChuoi(str){
+        //     let inaa='';
+        //     for(let i=0;i<str.length;i++){
+        //         inaa+=str.charAt(i)+'\n';
+        //     }
+        //     return inaa;
+        // }
+        // alert(printChuoi(str));
+
+
+        // b. Đếm số từ trong chuỗi
+
+        // function demSoTu(str){
+        //     let dem=0;
+        //     for(let i=0;i<str.length;i++){
+        //         if(str.charAt(i)!=' '){
+        //             dem++;
+        //         }
+        //     }
+        //     return dem;
+        // }
+        // alert(demSoTu(str));
+
+
+        // c. Đếm số lần xuất hiện      
+        
+        function demSoLanXuatHien(str){            
+            let phantu='';
+            for(let i=0;i<str.length;i++){
+                let dem=0;
+                for(let j=0;j<str.length;j++){                    
+                    if(str.charAt(j)===str.charAt(i)){  
+                        dem++;
+                    }
+                }
+                phantu+='Phan tu '+str.charAt(i)+' xuất hiện '+(dem)+'\n';
+            }
+            return phantu;
+
+
+        //     let strReceive = prompt("Nhap vao mot chuoi");
+        //     let mottumotdong = new Array(0);
+        //     let dem = 0;
+        //     for (let i = 0; i < dem; i++) {
+        //     let tansuat = 1;
+        //     for (let j = 0; j < dem; j++) {
+        //         if ((mottumotdong[i] === mottumotdong[j]) && i !== j) {
+        //             tansuat += 1;
+        //             for (let x = j; x < dem; x++) {
+        //                 mottumotdong[x] = mottumotdong[x + 1];
+        //             }
+        //             dem--;
+        //         }
+        //     }
+        //     if (typeof mottumotdong[i] !== undefined){
+        //         document.write(mottumotdong[i] + " co tan suat xuat hien la: " + tansuat + "<br>");
+        //     }
+        // }
+        }
+        alert(demSoLanXuatHien(str));
+    </script>
+</body>
+</html>

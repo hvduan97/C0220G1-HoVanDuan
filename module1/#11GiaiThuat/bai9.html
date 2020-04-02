@@ -7,23 +7,67 @@
 </head>
 <body>
     <script>
+        let upcase = "QWERTYUIOPLKJHGFDSAZXCVBNM ";
+        let lowcase = "qwertyuioplkjhgfdsazxcvbnm ";
         let nhap=prompt('Nhap chuoi');
         let str=nhap.toString();
         // a. In ra chuỗi đảo ngược của chuỗi đã cho;
-                // Dùng hàm:
-        function daoNguoc(str){
-            let first=0;
-            let last=str.length-1;
-            while(first<last){
-                let temp=str[first];
-                str[first]=str[last];
-                str[last]=temp;
-                first++;
-                last--;
+        // function daoNguoc(str){
+        //     // let stringtemp = "";
+        //     // for (let i = 0; i < str.length; i++) {
+        //     //     stringtemp += str[(str.length - 1) - i];
+        //     // }
+        //     // return stringtemp;        
+
+        //     var splitString = str.split("");
+        //     var reverseArray = splitString.reverse();
+        //     var joinArray = reverseArray.join("");
+        //     return joinArray;
+        // }
+        // alert(daoNguoc(str));
+
+
+
+
+        // b. Đổi chuỗi đã cho sang chữ hoa
+        // function chuyenSangHoa(str){
+        //     let a=str.toUpperCase();
+        //     return a;
+        // }
+        // alert(chuyenSangHoa(str));
+
+
+
+        // c. Đổi sang chữ thường
+        // function chuyenSangThuong(str){
+        //     let a=str.toLowerCase();
+        //     return a;
+        // }
+        // alert(chuyenSangThuong(str));
+
+
+        // d. Chữ hoa sang thường và thường sang hoa;
+        function change(str){
+            // for(let i=0;i<str.length;i++){
+            //     if(upcase.test(str.charAt(i))){
+            //         str.charAt(i)).
+            //     }
+            // }
+
+
+            let stringLowUpCase = "";
+            for (let i = 0; i < str.length; i++) {
+                for (let j = 0; j < lowcase.length; j++) {
+                    if (str.charAt(i) == upcase.charAt(j)) {
+                        stringLowUpCase += lowcase.charAt(j);
+                    } else if (str.charAt(i) == lowcase.charAt(j)) {
+                        stringLowUpCase += upcase.charAt(j);
+                    }
+                }
             }
-            alert(str);
+            return stringLowUpCase;
         }
-        daoNguoc(str);
+        alert(change(str));
     </script>
 </body>
 </html>

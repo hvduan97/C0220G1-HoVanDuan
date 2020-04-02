@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isMainNumber(n){
+            let sqr = parseInt(Math.sqrt(n));
+            if(sqr*sqr == n){
+                return true;
+            }else{
+                return false;
+            }    
+        }
+        let n=parseInt(prompt('Nhập vào số cần kiểm tra'));
+        let status=isMainNumber(n);
+        if(status){
+            alert('Số chính phương');
+        }
+        else{
+            alert('K phải số chính phương');
+        }
+    </script>
+</body>
+</html>

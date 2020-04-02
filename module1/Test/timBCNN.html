@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 5, b = 7, lcm;
+        let maxV = a*b;
+        function max(a,b){
+            if(a>b){
+                return a;
+            }
+            return b;
+        }
+        for(let i = max(a,b); i <= maxV; i++){
+            if(i % a == 0 && i % b == 0){
+                lcm = i;
+                break;
+            }
+        }
+        alert(lcm);
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[0,4,6,2,9,2,9,8,5,9,5,9]
+        function findMaxScore(arr){
+            let max=arr[0];
+            let indexMax;
+            for(let i=1;i<arr.length;i++){
+                if(arr[i]>max){
+                    max=arr[i];
+                    for(let j=1;j<arr.length;j++){
+                        if(arr.lastIndexOf(max)!=-1){
+                            indexMax=arr.lastIndexOf(max);
+                        }
+                    }
+                }
+            }
+            alert('Điểm cao nhất là: '+max+' vị trí sau cùng của điểm cao nhất: '+indexMax);
+        }
+        findMaxScore(arr);
+    </script>
+</body>
+</html>

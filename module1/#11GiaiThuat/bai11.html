@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n=parseInt(prompt('Nhập số phần tử cần tạo mảng:'));
+        let arr=new Array(n);        
+        function nhapMang(arr){
+            let k=0;
+             while(k<n){
+                 
+                 arr[k]=parseInt(prompt('Nhập phần tử arr['+k+']'));
+                 k++;
+             }
+             return arr;
+        }
+        function tinhTongSoDuongLe(arr){
+            let sum=0;
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]>0 && arr[i]%2==1){
+                    sum+=arr[i];
+                }
+            }
+            return sum;
+        }
+        function timKiemPT(arr,p){
+            // let index=0;
+            // for(let i=0;i<arr.length;i++){
+            //     if(arr.indexOf(p)!==-1){
+            //         index=arr.indexOf(p);
+            //         break;
+            //     }
+            // }
+            // return index;
+            
+            
+            // let tem='';
+            // for (let i = 0; i < arr.length; i++) {
+            // if (arr[i] === p) {
+            //     tem+=("vi tri " + p + " trong chuoi la: " + i + "\n");
+            //     break;
+            // }
+            // }
+            // return tem;
+            
+            // Mở tìm p thứ x, in ra vị trí;
+            // let dem=0;
+            // let tem='';
+            // for(let i=0;i<arr.length;i++){
+            //     while(dem<=)
+            // }
+
+        }
+        // alert(nhapMang(arr));
+        // // alert('Tổng số dương lẻ '+tinhTongSoDuongLe(arr));
+        // alert(timKiemPT(arr,2));
+
+
+        // e.	Chèn phần tử p vào mảng a sao cho mảng a vẫn đảm bảo tăng dần và xuất lại mảng a.
+        let b = parseInt(prompt("nhap vao so b"));
+        for (let i = 0; i < arr.length; i++) {
+            if ((arr[i] === b || arr[i] < b) && arr[i + 1] > b) {
+                for (let j = arr.length; j > i; j--) {
+                    arr[j] = arr[j - 1];
+                }
+                arr[i + 1] = b;
+                break;
+            }
+        }
+        document.write("mang sau khi chen : " + arr);
+    </script>
+</body>
+</html>

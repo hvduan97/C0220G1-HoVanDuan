@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[2,8,3,4,6,9,2,4,3,7,9,2,45];
+        // Dùng 2 vòng lặp 
+        // max=arr[0];
+        // for(let i=0;i<arr.length;i++){
+        //     if(arr[i]>max){
+        //         max=arr[i]
+        //     }
+        // }
+        // let max2=arr[0];
+        // for(let i=0;i<arr.length;i++){
+        //     if(arr[i]>max2 && arr[i]<max){
+        //         max2=arr[i];
+        //     }
+        // }
+        // alert(max);
+        // alert(max2);
+
+        // Dùng 1 vòng lặp
+        let loop, largest, second;
+        if(arr[0] > arr[1]) {
+            largest = arr[0];
+            second  = arr[1];
+        }else {
+            largest = arr[1];
+            second  = arr[0];
+        }        
+        for(loop = 2; loop < arr.length; loop++) {
+            if( largest < arr[loop] ) {
+                second = largest;
+                largest = arr[loop];
+            }else if( second < arr[loop] ) {
+                second =  arr[loop];
+            }
+        }
+        alert("Phan tu lon nhat: "+largest+" Phan tu lon thu hai: "+second); 
+    </script>
+</body>
+</html>

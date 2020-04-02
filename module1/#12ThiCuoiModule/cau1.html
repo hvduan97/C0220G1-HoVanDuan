@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=new Array(5);
+        let k=0;
+        let tem=0;
+        while(k<5){
+            arr[k]=parseInt(prompt('Nhập arr['+k+']'));
+            k++;
+        }
+        for(let i=0;i<arr.length-1;i++){
+            for(let j=i+1;j<arr.length;j++){
+                if(arr[i]>arr[j]){
+                    tem=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=tem;
+                }
+            }
+        }
+        alert('Mảng sau khi được sắp xếp là: ['+ arr+']');
+    </script>
+</body>
+</html>

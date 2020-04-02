@@ -14,13 +14,64 @@
         for (let i=0;i<arr.length;i++){
             if (arr[i]!==arr[(arr.length-1)-i]){
                 return false;
-            }
-            /*else {
-                return false;
-            }*/
+            }            
         }
         return true;
     }
+
+
+// 
+    // function CheckChuoidoixung(arr)
+    // {        
+    //     for(let i=0; i<arr.length; i++)
+    //     {
+    //         if(i!=arr.length-i-1) return false;
+    //     }
+    //     return true;
+    // }
+
+
+// Kiểm tra số đối xứng
+    // function timSoDao(nInput){
+    //     let nSoDao = 0;
+    //     let nRem;
+    //     while (nInput != 0){
+    //         // Lấy chữ số cuối của số nguyên sử dụng toán tử chia lấy dư (Modulus)
+    //         nRem = nInput % 10;
+
+    //         // Nhân số đảo với 10 và cộng với chữ số cuối
+    //         nSoDao = (nSoDao * 10) + nRem;
+
+    //         // Xóa chữ số cuối bằng cách sử dụng toán tử chia lấy phần nguyên (Division)
+    //         nInput = nInput / 10;
+    //     }
+
+    //     return nSoDao;
+    // }
+
+    // // Hàm kiểm tra một số nguyên dương n cho trước có phải là số đối xứng hay không
+    // function laSoDoiXung(nInput){
+    //     if (nInput == timSoDao(nInput)){
+    //         return true;
+    //     };
+    //     return false; 
+    //     // <=> return (n == timSoDao(n));
+    // }
+
+
+    // let nInput=parseInt(prompt('nhap so'));
+	// timSoDao(nInput);
+    // laSoDoiXung(nInput);
+
+	// // Kiểm tra là số đối xứng
+	// if (laSoDoiXung(nInput)){
+	// 	alert('Doi xung')
+	// }
+	// else{
+	// 	alert('K đối xứng')
+	// }
+    // // return false;
+        
 </script>
 </body>
 </html>
